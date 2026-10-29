@@ -7,12 +7,12 @@ function randomValueFromArray(array) {
   return array[random];
 }
 
-const characters = ["Willy the Goblin", "Big Daddy", "Father Christmas"];
-const places = ["the soup kitchen", "Disneyland", "the White House"];
+const characters = ["Zack Weaver", "Darth Vader", "Jeff Bezos"];
+const places = ["the White House", "a concert", "your moms house"];
 const events = [
-  "spontaneously combusted",
-  "melted into a puddle on the sidewalk",
-  "turned into a slug and slithered away",
+  "pooped his pants",
+  "revealed himself as Anthony Pinter",
+  "transformed into a middle age divorced dad with a drinking problem",
 ];
 
 function returnRandomStoryString() {
@@ -20,7 +20,7 @@ function returnRandomStoryString() {
   const randomPlace = randomValueFromArray(places);
   const randomEvent = randomValueFromArray(events);
 
-  let storyText = `It was 94 Fahrenheit outside, so ${randomCharacter} went for a walk. When they got to ${randomPlace}, they stared in horror for a few moments, then ${randomEvent}. Bob saw the whole thing, but was not surprised — ${randomCharacter} weighs 300 pounds, and it was a hot day.`;
+  let storyText = `It was a nice Autumn day, approximately 20 degrees Celsius, so ${randomCharacter} decided to go for a drink. When he got to ${randomPlace}, he started to feel a bit funny, then ${randomEvent}. Cleveland Brown was there too and started twerking with joy with his butt becoming 10 more pounds with each bounce — ${randomCharacter} was not amused, and it was a succesful night out.`;
 
   return storyText;
 }
@@ -32,14 +32,14 @@ function generateStory() {
 
   if (customName.value !== "") {
     const name = customName.value;
-    newStory = newStory.replace("Bob", name);
+    newStory = newStory.replace("Cleveland Brown", name);
   }
 
   if (document.getElementById("uk").checked) {
     const weight = `${Math.round(300 / 14)} stone`;
     const temperature = `${Math.round((94 - 32) * (5 / 9))} Celsius`;
-    newStory = newStory.replace("300 pounds", weight);
-    newStory = newStory.replace("94 Fahrenheit", temperature);
+    newStory = newStory.replace("10 more pounds", weight);
+    newStory = newStory.replace("20 degrees Celsius", temperature);
   }
 
   story.textContent = newStory;
